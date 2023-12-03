@@ -2,47 +2,16 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
-
-import { createStore } from 'redux';
-
-
-// STORE ACTION
-const increment = () => {
-  return {
-    type: 'INCREMENT',
-
-
-  };
-};
-
-// REDUCER
-const counterReducer = ( state = 0, action ) => {
-  switch(action.type) {
-    case 'INCREMENT':
-      return state + 1;
-    case 'DECREMENT':
-      return state - 1;
-  }
-}
+import { createStore } from 'redux'
+import allReducers from './reducers'
 
 // STORE
-let store = createStore(counterReducer);
-
-
-
-
+let store = createStore( allReducers )
 
 // DISPATCH (FIRE!!!)
-
-
-ReactDOM.render(
-
-  document.getElementById('root')).render(
-    store.subscribe( () => console.log( store.getState() ) ) )
-    store.dispatch( increment() );
-
+ReactDOM.createRoot(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-
-)
+  <App />
+</React.StrictMode>,
+document.getElementById('root')
+);
