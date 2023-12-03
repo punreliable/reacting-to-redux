@@ -2,14 +2,14 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
-import { createStore } from 'redux'
+import { configureStore } from '@reduxjs/toolkit';
 import allReducers from './reducers'
 
 // STORE
-let store = createStore( allReducers )
+const store = configureStore({ reducer: allReducers })
 
 // DISPATCH (FIRE!!!)
-ReactDOM.createRoot(
+ReactDOM.render(
   <React.StrictMode>
   <App />
 </React.StrictMode>,

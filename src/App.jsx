@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import punLogo from './assets/logo-punreliable.svg';
 import './App.css'
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import Nav from './Nav';
 
 function App() {
 
   const footerMessage = "A Punreliable person is everyone's friend.";
   const counter = useSelector( state => state.counter);
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -17,9 +19,12 @@ function App() {
       </div>
       <h1>Counter</h1>
       <div className="card">
-        <button>Increment</button>
+        <button onClick={()=>{
+          dispatch({type:"INCREMENT"})
+        }}>Increment</button>
         <p>{counter}</p>
       </div>
+      <Nav />
       <p className="read-the-docs">{footerMessage}</p>
     </>
   )
