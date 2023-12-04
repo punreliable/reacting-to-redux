@@ -4,7 +4,7 @@ import App from './App.jsx'
 import { Provider } from 'react-redux'
 //import { store } from 'store/reduxStore'
 import { configureStore } from '@reduxjs/toolkit'
-import './index.css'
+import './index.scss'
 import allReducers from './reducers'
 import { createRoot } from 'react-dom/client'
 

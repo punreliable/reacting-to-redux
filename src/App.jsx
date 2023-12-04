@@ -1,7 +1,7 @@
 //import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import punLogo from './assets/logo-punreliable.svg'
-import './App.css'
+import './App.scss'
 import Nav from './Nav'
 
 const App = () => {
